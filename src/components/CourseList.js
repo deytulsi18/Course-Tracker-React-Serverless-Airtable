@@ -4,10 +4,10 @@ import Course from './Course';
 export default function CourseList({ courses, refreshCourses }) {
     return (
         <div>
-            <h2 className="mt-5 mb-3">Backlog</h2>
+            <h2 className="mt-5 mb-3">Backlog :</h2>
             <div className="list-group">
                 {courses
-                    .filter((course) => !course.purchased)
+                    .filter((course) => !course.completed)
                     .map((course) => (
                         <Course
                             course={course}
@@ -16,9 +16,9 @@ export default function CourseList({ courses, refreshCourses }) {
                         />
                     ))}
             </div>
-            <h2 className="mt-5 mb-3">Already Purchased</h2>
+            <h2 className="mt-5 mb-3">Already Completed :</h2>
             {courses
-                .filter((course) => course.purchased)
+                .filter((course) => course.completed)
                 .map((course) => (
                     <Course
                         course={course}

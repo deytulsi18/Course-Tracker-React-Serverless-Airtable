@@ -5,7 +5,7 @@ export default function Course({ course, refreshCourses }) {
         try {
             await fetch('/api/courses', {
                 method: 'PUT',
-                body: JSON.stringify({ ...course, purchased: true }),
+                body: JSON.stringify({ ...course, completed: true }),
             });
             refreshCourses();
         } catch (err) {
@@ -33,15 +33,15 @@ export default function Course({ course, refreshCourses }) {
                 Tags:{' '}
                 {course.tags &&
                     course.tags.map((tag) => (
-                        <span className="badge badge-primary mr-2 text-warning bg-secondary">{tag}</span>
+                        <span className="badge badge-primary mr-2 text-warning bg-primary">{tag}</span>
                     ))}
             </p>
-            {!course.purchased && (
+            {!course.completed && (
                 <button
-                    className="btn btn-sm btn-primary"
+                    className="btn btn-sm btn-success"
                     onClick={markCoursePurchased}
                 >
-                    Purchased
+                    Completed
                 </button>
             )}
             <button
