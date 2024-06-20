@@ -33,7 +33,7 @@ export default function Course({ course, refreshCourses }) {
                 Tags:{' '}
                 {course.tags &&
                     course.tags.map((tag) => (
-                        <span className="badge badge-primary mr-2">{tag}</span>
+                        <span className="badge badge-primary mr-2 text-warning bg-secondary">{tag}</span>
                     ))}
             </p>
             {!course.purchased && (
