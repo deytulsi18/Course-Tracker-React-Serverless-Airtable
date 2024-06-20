@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Course({ course, refreshCourses }) {
-    const markCoursePurchased = async () => {
+    const markCourseCompleted = async () => {
         try {
             await fetch('/api/courses', {
                 method: 'PUT',
@@ -33,13 +33,13 @@ export default function Course({ course, refreshCourses }) {
                 Tags:{' '}
                 {course.tags &&
                     course.tags.map((tag) => (
-                        <span className="badge badge-primary mr-2 text-warning bg-primary">{tag}</span>
+                        <span className="badge badge-primary mr-2 text-light bg-dark">{tag}</span>
                     ))}
             </p>
             {!course.completed && (
                 <button
                     className="btn btn-sm btn-success"
-                    onClick={markCoursePurchased}
+                    onClick={markCourseCompleted}
                 >
                     Completed
                 </button>

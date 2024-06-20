@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 export default function Tags({ tagsUpdated, myKey }) {
-    const tagChoices = ['node', 'javascript', 'react', 'jamstack'];
+    const tagChoices = ['Urgent', 'Flexible', 'Trivial', 'Mandatory', 'Part-time', 'Extra'];
     const [selectedTags, setSelectedTags] = useState([]);
 
     useEffect(() => {
@@ -27,13 +27,14 @@ export default function Tags({ tagsUpdated, myKey }) {
     return (
         <>
             {tagChoices.map((choice, index) => (
-                <label className="checkbox-inline mr-3" key={index}>
+                <label className="checkbox-inline mr-3 px-2 h5 bg-secondary text-white py-2 border border-left border-3" key={index}>
                     <input
                         type="checkbox"
                         value={choice}
                         onChange={tagChange}
+                        
                     />
-                    {' ' + choice}
+                    {' ' + choice + ' '}
                 </label>
             ))}
         </>

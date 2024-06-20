@@ -33,8 +33,8 @@ export default function CourseForm({ courseAdded }) {
     };
 
     return (
-        <div className="card">
-            <div className="card-header">Add a New Course</div>
+        <div className="card bg-light">
+            <div className="card-header bg-secondary text-white">Add a New Course</div>
             <div className="card-body">
                 <form className="" onSubmit={submitCourse}>
                     <div className="form-group">
